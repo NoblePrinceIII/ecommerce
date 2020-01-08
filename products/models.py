@@ -8,7 +8,7 @@ class Product(models.Model):
     price = models.DecimalField(decimal_places=2,
                                 max_digits=100,
                                 default=29.99)
-
+    image = models.FileField(upload_to='products/images/', null=True)
     slug = models.SlugField()
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
