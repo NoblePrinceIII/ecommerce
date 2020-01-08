@@ -8,6 +8,7 @@ class Product(models.Model):
     price = models.DecimalField(decimal_places=2,
                                 max_digits=100,
                                 default=29.99)
+
     slug = models.SlugField()
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -15,3 +16,6 @@ class Product(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_price(self):
+        return self.price
